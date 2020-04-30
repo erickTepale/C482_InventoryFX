@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/part.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/product.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,14 +95,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
@@ -206,7 +214,8 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1588040444231" duration="875000" />
-      <workItem from="1588041380962" duration="543000" />
+      <workItem from="1588041380962" duration="814000" />
+      <workItem from="1588206918531" duration="8440000" />
     </task>
     <servers />
   </component>
@@ -218,37 +227,45 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2597" y="86" key="#Project_Structure" timestamp="1588041067060">
+    <state x="2597" y="86" key="#Project_Structure" timestamp="1588214975358">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state x="2597" y="86" key="#Project_Structure/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588041067060" />
+    <state x="2597" y="86" key="#Project_Structure/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588214975358" />
     <state x="2624" y="97" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1588040476288">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
     <state x="2624" y="97" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588040476288" />
-    <state width="1358" height="250" key="GridCell.Tab.0.bottom" timestamp="1588042337874">
+    <state x="2294" y="505" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1588214857784">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588042337874" />
-    <state width="1358" height="250" key="GridCell.Tab.0.center" timestamp="1588042337873">
+    <state x="2294" y="505" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588214857784" />
+    <state x="2470" y="464" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1588214861574">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588042337873" />
-    <state width="1358" height="250" key="GridCell.Tab.0.left" timestamp="1588042337872">
+    <state x="2470" y="464" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588214861574" />
+    <state width="1358" height="250" key="GridCell.Tab.0.bottom" timestamp="1588218144359">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588042337872" />
-    <state width="1358" height="250" key="GridCell.Tab.0.right" timestamp="1588042337873">
+    <state width="1358" height="250" key="GridCell.Tab.0.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588218144359" />
+    <state width="1358" height="250" key="GridCell.Tab.0.center" timestamp="1588218144358">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588042337873" />
+    <state width="1358" height="250" key="GridCell.Tab.0.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588218144358" />
+    <state width="1358" height="250" key="GridCell.Tab.0.left" timestamp="1588218144357">
+      <screen x="1680" y="-289" width="2560" height="1417" />
+    </state>
+    <state width="1358" height="250" key="GridCell.Tab.0.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588218144357" />
+    <state width="1358" height="250" key="GridCell.Tab.0.right" timestamp="1588218144358">
+      <screen x="1680" y="-289" width="2560" height="1417" />
+    </state>
+    <state width="1358" height="250" key="GridCell.Tab.0.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588218144358" />
     <state x="2485" y="2" key="SettingsEditor" timestamp="1588041778307">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
     <state x="2485" y="2" key="SettingsEditor/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588041778307" />
-    <state x="2667" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1588041393702">
+    <state x="2667" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1588206935577">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state x="2667" y="253" key="com.intellij.ide.util.TipDialog/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588041393702" />
+    <state x="2667" y="253" key="com.intellij.ide.util.TipDialog/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588206935577" />
   </component>
 </project>
