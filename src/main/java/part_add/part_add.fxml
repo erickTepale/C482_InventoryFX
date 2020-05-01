@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="part_add.PartAddController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -23,7 +17,7 @@
                   <Insets left="20.0" />
                </HBox.margin>
             </Label>
-            <RadioButton id="addPartInHouseRadio" fx:id="addPartInHouseRadio" mnemonicParsing="false" prefHeight="58.0" prefWidth="162.0" text="In-House">
+            <RadioButton id="addPartInHouseRadio" fx:id="addPartInHouseRadio" mnemonicParsing="false" onMouseClicked="#onMouseClickedInHouseRadio" prefHeight="58.0" prefWidth="162.0" text="In-House">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
@@ -31,7 +25,7 @@
                   <ToggleGroup fx:id="fabricated" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton id="addPartOutsourcedRadio" fx:id="addPartOutsourceRadio" layoutX="190.0" layoutY="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" selected="true" text="Outsourced" toggleGroup="$fabricated">
+            <RadioButton id="addPartOutsourcedRadio" fx:id="addPartOutsourceRadio" layoutX="190.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#onMouseClickedOutsourceRadio" prefHeight="50.0" prefWidth="155.0" selected="true" text="Outsourced" toggleGroup="$fabricated">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
@@ -51,7 +45,7 @@
                   <Insets left="50.0" />
                </HBox.margin>
             </Label>
-            <TextField id="addPartID" fx:id="addPartID" disable="true" prefHeight="50.0" prefWidth="163.0" promptText="Auto Gen - Disabled">
+            <TextField id="addPartIDTextField" fx:id="addPartIDTextField" disable="true" prefHeight="50.0" prefWidth="163.0" promptText="Auto Gen - Disabled">
                <HBox.margin>
                   <Insets left="60.0" />
                </HBox.margin>
@@ -156,7 +150,7 @@
       </HBox>
       <HBox prefHeight="90.0" prefWidth="600.0">
          <children>
-            <Label prefHeight="50.0" prefWidth="144.0" text="Company Name">
+            <Label id="addPartCompanyMachineLabel" fx:id="addPartCompanyMachineLabel" prefHeight="50.0" prefWidth="144.0" text="Company Name">
                <font>
                   <Font size="21.0" />
                </font>
@@ -173,12 +167,12 @@
       </HBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="600.0">
          <children>
-            <Button id="addPartSaveButton" fx:id="addPartSaveButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="83.0" text="Save">
+            <Button id="addPartSaveButton" fx:id="addPartSaveButton" mnemonicParsing="false" onMouseClicked="#onMouseClickedSaveButton" prefHeight="27.0" prefWidth="83.0" text="Save">
                <HBox.margin>
                   <Insets right="30.0" />
                </HBox.margin>
             </Button>
-            <Button id="addPartCancelButton" fx:id="addPartCancelButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="Cancel">
+            <Button id="addPartCancelButton" fx:id="addPartCancelButton" mnemonicParsing="false" onMouseClicked="#onMouseClickedCancelButton" prefHeight="27.0" prefWidth="84.0" text="Cancel">
                <HBox.margin>
                   <Insets right="30.0" />
                </HBox.margin>

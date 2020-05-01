@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/part/PartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/part_add/PartAddController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/part_modify/PartModifyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/product/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/product_add/ProductAddController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/product_modify/ProductModifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/part/partService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/WindowUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/C482_InventoryFX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/C482_InventoryFX.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/part/PartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part/PartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/part/part.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part/part.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/part_add/PartAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part_add/PartAddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/part_add/part_add.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part_add/part_add.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/part_modify/PartModifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part_modify/PartModifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/part_modify/part_modify.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part_modify/part_modify.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/part.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part/part.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/part_add.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part_add/part_add.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/part_modify.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part_modify/part_modify.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/product.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product/product.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/product_add.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product_add/product_add.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/product_modify.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/product_modify/product_modify.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +87,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1b9NeC2CKVOlH36ypsVOIv7rjDj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -106,6 +99,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -132,10 +126,10 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/product_modify" />
       <recent name="$PROJECT_DIR$/src/main/java/product_add" />
-      <recent name="$PROJECT_DIR$/src/main/java/part_modify" />
       <recent name="$PROJECT_DIR$/src/main/java/part_add" />
+      <recent name="$PROJECT_DIR$/src/main/java/product_modify" />
+      <recent name="$PROJECT_DIR$/src/main/java/part_modify" />
       <recent name="$PROJECT_DIR$/src/main/java/product" />
     </key>
   </component>
@@ -244,7 +238,7 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1588040444231" duration="875000" />
       <workItem from="1588041380962" duration="814000" />
-      <workItem from="1588206918531" duration="15203000" />
+      <workItem from="1588206918531" duration="21447000" />
     </task>
     <servers />
   </component>
@@ -253,6 +247,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
@@ -272,22 +267,22 @@
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
     <state x="2470" y="464" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588214861574" />
-    <state width="1358" height="250" key="GridCell.Tab.0.bottom" timestamp="1588312098209">
+    <state width="1358" height="250" key="GridCell.Tab.0.bottom" timestamp="1588347785647">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588312098209" />
-    <state width="1358" height="250" key="GridCell.Tab.0.center" timestamp="1588312098208">
+    <state width="1358" height="250" key="GridCell.Tab.0.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588347785647" />
+    <state width="1358" height="250" key="GridCell.Tab.0.center" timestamp="1588347785646">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588312098208" />
-    <state width="1358" height="250" key="GridCell.Tab.0.left" timestamp="1588312098208">
+    <state width="1358" height="250" key="GridCell.Tab.0.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588347785646" />
+    <state width="1358" height="250" key="GridCell.Tab.0.left" timestamp="1588347785646">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588312098208" />
-    <state width="1358" height="250" key="GridCell.Tab.0.right" timestamp="1588312098209">
+    <state width="1358" height="250" key="GridCell.Tab.0.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588347785646" />
+    <state width="1358" height="250" key="GridCell.Tab.0.right" timestamp="1588347785647">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588312098209" />
+    <state width="1358" height="250" key="GridCell.Tab.0.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588347785647" />
     <state x="2485" y="2" key="SettingsEditor" timestamp="1588311904557">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
@@ -300,5 +295,9 @@
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
     <state x="2723" y="322" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588311129673" />
+    <state x="1746" y="70" width="1367" height="1014" key="dock-window-1" timestamp="1588342611035">
+      <screen x="1680" y="-289" width="2560" height="1417" />
+    </state>
+    <state x="1746" y="70" width="1367" height="1014" key="dock-window-1/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588342611035" />
   </component>
 </project>

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
    <children>
       <VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: grey;">
          <children>
@@ -46,7 +42,7 @@
             </HBox>
             <HBox id="exitHBoxContainer" alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="951.0">
                <children>
-                  <Button id="exitButton" fx:id="exitButton" mnemonicParsing="false" prefHeight="38.0" prefWidth="122.0" text="Exit">
+                  <Button id="exitButton" fx:id="exitButton" mnemonicParsing="false" onMouseClicked="#onMouseClickedExitButton" prefHeight="38.0" prefWidth="122.0" text="Exit">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
