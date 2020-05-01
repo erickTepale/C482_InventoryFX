@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/part.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/product.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/part_add.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/part_modify.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/product_add.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/product_modify.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C482_InventoryFX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/C482_InventoryFX.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/part.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/part.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/product.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/product.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +219,7 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1588040444231" duration="875000" />
       <workItem from="1588041380962" duration="814000" />
-      <workItem from="1588206918531" duration="8440000" />
+      <workItem from="1588206918531" duration="13629000" />
     </task>
     <servers />
   </component>
@@ -243,26 +247,26 @@
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
     <state x="2470" y="464" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588214861574" />
-    <state width="1358" height="250" key="GridCell.Tab.0.bottom" timestamp="1588218144359">
+    <state width="1358" height="250" key="GridCell.Tab.0.bottom" timestamp="1588309958320">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588218144359" />
-    <state width="1358" height="250" key="GridCell.Tab.0.center" timestamp="1588218144358">
+    <state width="1358" height="250" key="GridCell.Tab.0.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588309958320" />
+    <state width="1358" height="250" key="GridCell.Tab.0.center" timestamp="1588309958320">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588218144358" />
-    <state width="1358" height="250" key="GridCell.Tab.0.left" timestamp="1588218144357">
+    <state width="1358" height="250" key="GridCell.Tab.0.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588309958320" />
+    <state width="1358" height="250" key="GridCell.Tab.0.left" timestamp="1588309958319">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588218144357" />
-    <state width="1358" height="250" key="GridCell.Tab.0.right" timestamp="1588218144358">
+    <state width="1358" height="250" key="GridCell.Tab.0.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588309958319" />
+    <state width="1358" height="250" key="GridCell.Tab.0.right" timestamp="1588309958320">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588218144358" />
-    <state x="2485" y="2" key="SettingsEditor" timestamp="1588041778307">
+    <state width="1358" height="250" key="GridCell.Tab.0.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588309958320" />
+    <state x="2485" y="2" key="SettingsEditor" timestamp="1588307626936">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state x="2485" y="2" key="SettingsEditor/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588041778307" />
+    <state x="2485" y="2" key="SettingsEditor/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588307626936" />
     <state x="2667" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1588206935577">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>

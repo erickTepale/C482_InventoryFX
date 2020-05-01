@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="57.0" prefWidth="180.0" text="Add Part">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <RadioButton id="addPartInHouseRadio" fx:id="addPartInHouseRadio" mnemonicParsing="false" prefHeight="58.0" prefWidth="162.0" text="In-House">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="fabricated" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton id="addPartOutsourcedRadio" fx:id="addPartOutsourceRadio" layoutX="190.0" layoutY="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="155.0" selected="true" text="Outsourced" toggleGroup="$fabricated">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </RadioButton>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="52.0" prefWidth="93.0" text="ID">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="addPartID" fx:id="addPartID" disable="true" prefHeight="50.0" prefWidth="163.0" promptText="Auto Gen - Disabled">
+               <HBox.margin>
+                  <Insets left="60.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="55.0" prefWidth="82.0" text="Name">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="addPartNameTextField" fx:id="addPartNameTextField" prefHeight="50.0" prefWidth="163.0" promptText="Part Name">
+               <HBox.margin>
+                  <Insets left="71.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="50.0" prefWidth="83.0" text="Inv">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="addPartInvTextField" fx:id="addPartInvTextField" prefHeight="50.0" prefWidth="163.0" promptText="Inv">
+               <HBox.margin>
+                  <Insets left="70.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="50.0" prefWidth="94.0" text="Price/Cost">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="addPartPriceTextField" fx:id="addPartPriceTextField" prefHeight="50.0" prefWidth="163.0" promptText="Price/Cost">
+               <HBox.margin>
+                  <Insets left="59.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="50.0" prefWidth="58.0" text="Max">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="addPartMaxTextField" fx:id="addPartMaxTextField" prefHeight="50.0" prefWidth="85.0" promptText="Max">
+               <HBox.margin>
+                  <Insets left="95.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label prefHeight="50.0" prefWidth="61.0" text="Min">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="40.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="addPartMinTextField" fx:id="addPartMinTextField" prefHeight="50.0" prefWidth="85.0" promptText="Min">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="90.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="50.0" prefWidth="144.0" text="Company Name">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Label>
+            <TextField id="addPartCompanyMachineTextField" fx:id="addPartCompanyMachineTextField" prefHeight="61.0" prefWidth="163.0" promptText="Comp Nm">
+               <HBox.margin>
+                  <Insets left="9.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="600.0">
+         <children>
+            <Button id="addPartSaveButton" fx:id="addPartSaveButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="83.0" text="Save">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="addPartCancelButton" fx:id="addPartCancelButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="Cancel">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
