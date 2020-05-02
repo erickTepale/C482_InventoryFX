@@ -10,4 +10,5 @@ public class MainController {
     public void onMouseClickedExitButton(){
         WindowUtility.closeWindow(exitButton);
     }
+
 }
