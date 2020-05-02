@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/part/InHouse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/part/Outsourced.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/part/Part.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/product/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/product/ProductTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/main/InventoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/C482_InventoryFX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/C482_InventoryFX.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/part/PartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/part/PartController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="209" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -133,7 +129,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductTest.deleteAssociatedPartTest1">
+  <component name="RunManager" selected="JUnit.InventoryTest.DeletePart1">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -181,17 +177,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductTest.addAssociatedPartTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in C482_InventoryFX" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="C482_InventoryFX" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryTest.DeletePart1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="C482_InventoryFX" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product" />
-      <option name="MAIN_CLASS_NAME" value="product.ProductTest" />
-      <option name="METHOD_NAME" value="addAssociatedPartTest2" />
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.InventoryTest" />
+      <option name="METHOD_NAME" value="DeletePart1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -201,17 +209,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductTest.deleteAssociatedPartTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTest.UpdatePart1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="C482_InventoryFX" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product" />
-      <option name="MAIN_CLASS_NAME" value="product.ProductTest" />
-      <option name="METHOD_NAME" value="deleteAssociatedPartTest1" />
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.InventoryTest" />
+      <option name="METHOD_NAME" value="UpdatePart1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -221,17 +229,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductTest.getAssociatedPartTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTest.deleteProduct1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="C482_InventoryFX" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product" />
-      <option name="MAIN_CLASS_NAME" value="product.ProductTest" />
-      <option name="METHOD_NAME" value="getAssociatedPartTest1" />
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.InventoryTest" />
+      <option name="METHOD_NAME" value="deleteProduct1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -241,17 +249,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductTest.getAssociatedPartTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryTest.updateProduct1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="C482_InventoryFX" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="product.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="product" />
-      <option name="MAIN_CLASS_NAME" value="product.ProductTest" />
-      <option name="METHOD_NAME" value="getAssociatedPartTest2" />
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.InventoryTest" />
+      <option name="METHOD_NAME" value="updateProduct1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -294,10 +302,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProductTest.deleteAssociatedPartTest1" />
-        <item itemvalue="JUnit.ProductTest.addAssociatedPartTest2" />
-        <item itemvalue="JUnit.ProductTest.getAssociatedPartTest2" />
-        <item itemvalue="JUnit.ProductTest.getAssociatedPartTest1" />
+        <item itemvalue="JUnit.InventoryTest.DeletePart1" />
+        <item itemvalue="JUnit.InventoryTest.deleteProduct1" />
+        <item itemvalue="JUnit.All in C482_InventoryFX" />
+        <item itemvalue="JUnit.InventoryTest.UpdatePart1" />
+        <item itemvalue="JUnit.InventoryTest.updateProduct1" />
       </list>
     </recent_temporary>
   </component>
@@ -326,7 +335,7 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1588040444231" duration="875000" />
       <workItem from="1588041380962" duration="814000" />
-      <workItem from="1588206918531" duration="29016000" />
+      <workItem from="1588206918531" duration="34896000" />
     </task>
     <servers />
   </component>
@@ -359,38 +368,38 @@
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
     <state x="2470" y="464" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588214861574" />
-    <state width="1358" height="250" key="GridCell.Tab.0.bottom" timestamp="1588382910041">
+    <state width="1358" height="250" key="GridCell.Tab.0.bottom" timestamp="1588440805149">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588382910041" />
-    <state width="1358" height="250" key="GridCell.Tab.0.center" timestamp="1588382910040">
+    <state width="1358" height="250" key="GridCell.Tab.0.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588440805149" />
+    <state width="1358" height="250" key="GridCell.Tab.0.center" timestamp="1588440805148">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588382910040" />
-    <state width="1358" height="250" key="GridCell.Tab.0.left" timestamp="1588382910039">
+    <state width="1358" height="250" key="GridCell.Tab.0.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588440805148" />
+    <state width="1358" height="250" key="GridCell.Tab.0.left" timestamp="1588440805147">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588382910039" />
-    <state width="1358" height="250" key="GridCell.Tab.0.right" timestamp="1588382910041">
+    <state width="1358" height="250" key="GridCell.Tab.0.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588440805147" />
+    <state width="1358" height="250" key="GridCell.Tab.0.right" timestamp="1588440805148">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="250" key="GridCell.Tab.0.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588382910041" />
-    <state width="1358" height="310" key="GridCell.Tab.1.bottom" timestamp="1588382812448">
+    <state width="1358" height="250" key="GridCell.Tab.0.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588440805148" />
+    <state width="1358" height="310" key="GridCell.Tab.1.bottom" timestamp="1588436656558">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="310" key="GridCell.Tab.1.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588382812448" />
-    <state width="1358" height="310" key="GridCell.Tab.1.center" timestamp="1588382812447">
+    <state width="1358" height="310" key="GridCell.Tab.1.bottom/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588436656558" />
+    <state width="1358" height="310" key="GridCell.Tab.1.center" timestamp="1588436656557">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="310" key="GridCell.Tab.1.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588382812447" />
-    <state width="1358" height="310" key="GridCell.Tab.1.left" timestamp="1588382812447">
+    <state width="1358" height="310" key="GridCell.Tab.1.center/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588436656557" />
+    <state width="1358" height="310" key="GridCell.Tab.1.left" timestamp="1588436656557">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="310" key="GridCell.Tab.1.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588382812447" />
-    <state width="1358" height="310" key="GridCell.Tab.1.right" timestamp="1588382812447">
+    <state width="1358" height="310" key="GridCell.Tab.1.left/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588436656557" />
+    <state width="1358" height="310" key="GridCell.Tab.1.right" timestamp="1588436656557">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state width="1358" height="310" key="GridCell.Tab.1.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588382812447" />
+    <state width="1358" height="310" key="GridCell.Tab.1.right/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588436656557" />
     <state x="2485" y="2" key="SettingsEditor" timestamp="1588382936492">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
@@ -403,9 +412,13 @@
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
     <state x="2723" y="322" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588311129673" />
-    <state x="1667" y="47" width="1367" height="1014" key="dock-window-1" timestamp="1588379316129">
+    <state x="1680" y="-165" width="1367" height="978" key="dock-window-1" timestamp="1588435153069">
       <screen x="1680" y="-289" width="2560" height="1417" />
     </state>
-    <state x="1667" y="47" width="1367" height="1014" key="dock-window-1/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588379316129" />
+    <state x="-13" y="23" width="1367" height="978" key="dock-window-1/0.23.1680.978@0.23.1680.978" timestamp="1588384842296" />
+    <state x="1680" y="-165" width="1367" height="978" key="dock-window-1/1680.-289.2560.1417/0.23.1680.978@1680.-289.2560.1417" timestamp="1588435153069" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/C482_InventoryFX$All_in_C482_InventoryFX.ic" NAME="All in C482_InventoryFX Coverage Results" MODIFIED="1588440118658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
