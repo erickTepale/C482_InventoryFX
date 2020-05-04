@@ -11,6 +11,10 @@ import java.util.Optional;
  */
 public class PartService {
 
+    public static Integer add(Part part){
+        return null;
+    }
+
     public static ObservableList<Part> deletePart(Part toDelete){
         Inventory.lookupPart(toDelete.getId()).ifPresent(Inventory::deletePart);
         return Inventory.getAllParts();
