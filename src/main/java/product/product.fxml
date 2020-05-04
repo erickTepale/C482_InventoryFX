@@ -31,12 +31,12 @@
         </HBox>
       <Pane prefHeight="236.0" prefWidth="430.0">
          <children>
-            <TableView fx:id="productTable" layoutX="1.0" prefHeight="236.0" prefWidth="430.0">
+            <TableView fx:id="productTableView" layoutX="1.0" prefHeight="236.0" prefWidth="430.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Product ID" />
-                <TableColumn prefWidth="174.0" text="Product Name" />
-                  <TableColumn prefWidth="91.0" text="Inventory Level" />
-                  <TableColumn prefWidth="89.0" text="Price per Unit" />
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="Product ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="167.0" text="Product Name" />
+                  <TableColumn fx:id="inventoryColumn" prefWidth="98.0" text="Inventory Level" />
+                  <TableColumn fx:id="priceColumn" prefWidth="89.0" text="Price per Unit" />
               </columns>
             </TableView>
          </children></Pane>

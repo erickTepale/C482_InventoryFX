@@ -19,7 +19,4 @@ public class DisplayTable {
         Inventory.addPart(new InHouse(3, "Part 3", 15.00, 5, 1, 20, 101));
     }
 
-    public static void loadPartsTable(){
-        PartController.loadListenerData();
-    }
 }

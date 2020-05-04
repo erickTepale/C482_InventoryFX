@@ -27,7 +27,7 @@ public class Inventory {
 
     public static ObservableList<Part> lookupPart(String name){
         return FXCollections.observableList( allParts.stream()
-                                                .filter(obj -> obj.getName().equals(name))
+                                                .filter(obj -> obj.getName().toLowerCase().equals(name.toLowerCase()))
                                                 .collect(Collectors.toCollection(ArrayList<Part>::new)) );
     }
 
@@ -37,7 +37,7 @@ public class Inventory {
 
     public static ObservableList<Product> lookupProduct(String name){
         return FXCollections.observableList( allProducts.stream()
-                                                .filter(obj -> obj.getName().equals(name))
+                                                .filter(obj -> obj.getName().toLowerCase().equals(name.toLowerCase()))
                                                 .collect(Collectors.toCollection(ArrayList<Product>::new)));
     }
 
