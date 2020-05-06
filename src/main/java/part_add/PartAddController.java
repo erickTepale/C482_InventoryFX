@@ -40,7 +40,8 @@ public class PartAddController {
             if( PartService.add( generateInHousePart() ) )
                 WindowUtility.closeWindow(addPartSaveButton);
         }else
-            PartService.add( generateOusourcedPart() );
+            if( PartService.add( generateOusourcedPart() ) )
+                WindowUtility.closeWindow(addPartSaveButton);
 
     }
 
@@ -63,13 +64,16 @@ public class PartAddController {
 
     private Outsourced generateOusourcedPart(){
         try {
+            if(!isValidInput())
+                throw new Exception();
+
             return new Outsourced(generateID(),
-                    this.addPartNameTextField.getText(),
-                    Double.parseDouble(this.addPartPriceTextField.getText()),
-                    Integer.parseInt(this.addPartInvTextField.getText()),
-                    Integer.parseInt(this.addPartMinTextField.getText()),
-                    Integer.parseInt(this.addPartMaxTextField.getText()),
-                    this.addPartCompanyMachineTextField.getText());
+                    Validator.defaultValue(this.addPartNameTextField.getText()),
+                    validPrice,
+                    validInv,
+                    validMin,
+                    validMax,
+                    validCompany);
         }catch (Exception e){
             System.out.println("Issue Parsing Outsourced Part: " + e.getMessage() );
         }

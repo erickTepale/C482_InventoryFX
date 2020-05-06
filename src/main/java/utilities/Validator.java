@@ -33,6 +33,7 @@ public class Validator {
         return null;
     }
 
+    // TODO: Remove commas from input
     public static Double parseDouble(String input){
         try{
             return Double.parseDouble(input);
