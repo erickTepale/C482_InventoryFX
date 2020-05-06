@@ -9,7 +9,10 @@ import part.InHouse;
 import part.Outsourced;
 import part.Part;
 import part.PartService;
+import utilities.Validator;
 import utilities.WindowUtility;
+
+import java.util.InputMismatchException;
 
 public class PartAddController {
     public Button addPartSaveButton;
@@ -25,11 +28,19 @@ public class PartAddController {
     public RadioButton addPartOutsourceRadio;
     public RadioButton addPartInHouseRadio;
 
+    private Integer validInv;
+    private Double validPrice;
+    private Integer validMin;
+    private Integer validMax;
+    private String validCompany;
+    private Integer validMachine;
+
     public void onMouseClickedSaveButton(){
         if(isInHouseSelected()){
-            saveCallback( PartService.add( generateInHousePart() ) );
+            if( PartService.add( generateInHousePart() ) )
+                WindowUtility.closeWindow(addPartSaveButton);
         }else
-            saveCallback( PartService.add( generateOusourcedPart() ) );
+            PartService.add( generateOusourcedPart() );
 
     }
 
@@ -67,13 +78,18 @@ public class PartAddController {
 
     private InHouse generateInHousePart(){
         try {
+            setValidMachine();
+
+            if(!isValidInput())
+                throw new Exception();
+
             return new InHouse(generateID(),
-                    this.addPartNameTextField.getText(),
-                    Double.parseDouble(this.addPartPriceTextField.getText()),
-                    Integer.parseInt(this.addPartInvTextField.getText()),
-                    Integer.parseInt(this.addPartMinTextField.getText()),
-                    Integer.parseInt(this.addPartMaxTextField.getText()),
-                    Integer.parseInt(this.addPartCompanyMachineTextField.getText()));
+                    Validator.defaultValue(this.addPartNameTextField.getText()),
+                    validPrice,
+                    validInv,
+                    validMin,
+                    validMax,
+                    validMachine);
         }catch (Exception e){
             System.out.println("Issue Parsing InHouse Part: " + e.getMessage() );
         }
@@ -110,5 +126,38 @@ public class PartAddController {
      */
     private void saveCallback(Integer code){
 
+    }
+
+    private Boolean isValidInput(){
+        setValidMin();
+        setValidPrice();
+        setValidMax();
+        setValidCompany();
+        return  setValidInv();
+    }
+
+    public Boolean setValidInv() {
+        this.validInv = Validator.parseInt(this.addPartInvTextField.getText());
+        return Validator.validateMinMaxInput(this.validMin, this.validMax) && Validator.validateInv(this.validMin, this.validMax, this.validInv);
+    }
+
+    public void setValidPrice() {
+        this.validPrice = Validator.defaultValue( Validator.parseDouble(this.addPartPriceTextField.getText() ) );
+    }
+
+    public void setValidMin() {
+        this.validMin = Validator.defaultValue( Validator.parseInt(this.addPartMinTextField.getText() ) );
+    }
+
+    public void setValidMax() {
+        this.validMax = Validator.defaultValue( Validator.parseInt(this.addPartMaxTextField.getText() ) );
+    }
+
+    public void setValidCompany() {
+        this.validCompany = Validator.defaultValue(this.addPartCompanyMachineTextField.getText());
+    }
+
+    public void setValidMachine() {
+        this.validMachine = Validator.defaultValue( Validator.parseInt(this.addPartCompanyMachineTextField.getText() ) );
     }
 }

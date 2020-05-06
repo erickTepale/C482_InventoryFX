@@ -11,8 +11,12 @@ import java.util.Optional;
  */
 public class PartService {
 
-    public static Integer add(Part part){
-        return null;
+    public static Boolean add(Part part){
+        if(part != null) {
+            Inventory.addPart(part);
+            return true;
+        }
+        return false;
     }
 
     public static ObservableList<Part> deletePart(Part toDelete){
