@@ -1,12 +1,20 @@
 package part_modify;
 
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import main.Inventory;
+import part.InHouse;
+import part.Outsourced;
+import part.Part;
 import utilities.WindowUtility;
 
-public class PartModifyController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class PartModifyController implements Initializable {
     public Button modifyPartSaveButton;
     public Button modifyPartCancelButton;
     public Label modifyPartCompanyMachineLabel;
@@ -35,9 +43,31 @@ public class PartModifyController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        insertSelectedData();
+
+
+
+    }
+
     /**
      * Private Methods. Usually used for UI changes, No logic for data handled here
      */
+    private void insertSelectedData(){
+            Part selectedPart = Inventory.lookupPart(PartModifyService.modifyPartID).isPresent() ? Inventory.lookupPart(PartModifyService.modifyPartID).get() : null;
+            modifyPartIDTextField.setText(selectedPart.getId().toString());
+            modifyPartNameTextField.setText(selectedPart.getName());
+            modifyPartInvTextField.setText(selectedPart.getStock().toString());
+            modifyPartPriceTextField.setText(selectedPart.getPrice().toString());
+            modifyPartMaxTextField.setText(selectedPart.getMax().toString());
+            modifyPartMinTextField.setText(selectedPart.getMin().toString());
+            if(selectedPart instanceof InHouse)
+                modifyPartCompanyMachineTextField.setText(((InHouse) selectedPart).getMachineId().toString());
+            else if(selectedPart instanceof Outsourced)
+                modifyPartCompanyMachineTextField.setText(((Outsourced) selectedPart).getCompanyName());
+    }
+
     private void companyMachineDisplaySwap(){
         if(modifyPartInHouseRadio.selectedProperty().get())
             setMachineID();

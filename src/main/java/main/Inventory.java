@@ -10,6 +10,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Inventory {
+    //TODO: MAKE A STATIC SIZE that will keep track of all values ever inserted into parts/objects for IDS,
+    // there is a bug that if there are 5 items and u delete 4. then next add will have ID = 5 . will have same ID
     protected static ObservableList<Part> allParts = FXCollections.observableArrayList();
     protected static ObservableList<Product> allProducts = FXCollections.observableArrayList();
 
@@ -43,6 +45,13 @@ public class Inventory {
 
     public static void updatePart(Integer index, Part selectedPart){
         allParts.set(index, selectedPart);
+    }
+
+    public static void updatePart(Part selectedPart){
+        allParts = FXCollections.observableList( allParts
+                .stream()
+                .map(obj -> obj.getId().equals(selectedPart.getId()) ? selectedPart : obj)
+                .collect(Collectors.toCollection(ArrayList<Part>::new)));
     }
 
     public static void updateProduct(Integer index, Product selectedProduct){

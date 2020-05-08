@@ -11,7 +11,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.Inventory;
+import part_modify.PartModifyService;
 import utilities.DisplayTable;
+import utilities.Validator;
 import utilities.WindowUtility;
 
 import java.net.URL;
@@ -38,7 +40,8 @@ public class PartController implements Initializable {
     }
 
     public void onMouseClickedModifyButton(){
-        WindowUtility.openWindowFXMLFile( new FXMLLoader(getClass().getResource("/part_modify/part_modify.fxml")) );
+        PartModifyService.modifyPartID = this.partTableView.getSelectionModel().getSelectedItem().getId();
+        WindowUtility.openWindowFXMLFile( new FXMLLoader(getClass().getResource("/part_add/part_add.fxml")) );
     }
 
     public void onMouseClickedDeleteButton(){
