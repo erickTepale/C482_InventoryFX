@@ -3,10 +3,8 @@ package utilities;
 import main.Inventory;
 import part.InHouse;
 import part.Outsourced;
-import part.PartController;
 import product.Product;
 
-import javax.swing.table.TableColumn;
 
 public class DisplayTable {
     public static void loadPrelimData(){

@@ -1,6 +1,7 @@
 package part;
 
 import javafx.application.Application;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,6 +59,19 @@ public class PartController implements Initializable {
         this.nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         this.invColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
         this.priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        createListListener();
+
+        setAllTableItems();
+    }
+
+    private void setAllTableItems(){
         this.partTableView.setItems(Inventory.getAllParts());
     }
+
+    private void createListListener(){
+        Inventory.getAllParts().addListener((ListChangeListener<Part>)c -> {
+            setAllTableItems();
+        });
+    }
+
 }

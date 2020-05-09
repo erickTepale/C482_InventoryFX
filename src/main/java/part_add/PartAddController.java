@@ -41,10 +41,12 @@ public class PartAddController implements Initializable {
     private Integer validMachine;
 
     public void onMouseClickedSaveButton(){
-        if(PartModifyService.modifyPartID != -1)
+        System.out.println(Inventory.getAllParts());
+        if(PartModifyService.modifyPartID.equals(-1))
             save();
-        else
+        else {
             update();
+        }
     }
 
     public void onMouseClickedCancelButton(){
@@ -77,6 +79,8 @@ public class PartAddController implements Initializable {
         }else if( PartService.add( generateOusourcedPart() ) )
             WindowUtility.closeWindow(addPartSaveButton);
 
+        System.out.println(Inventory.getAllParts());
+
         resetModifyPartID();
     }
 
@@ -86,12 +90,13 @@ public class PartAddController implements Initializable {
         Integer id = PartModifyService.modifyPartID;
 
         if(isInHouseSelected())
-            Inventory.updatePart( generateInHousePart(id) );
+            PartService.update( generateInHousePart(id) );
         else
-            Inventory.updatePart(generateOusourcedPart(id));
+            PartService.update( generateOusourcedPart(id) );
 
-        resetModifyPartID();
         System.out.println(Inventory.getAllParts());
+        resetModifyPartID();
+
         WindowUtility.closeWindow(addPartSaveButton);
     }
 
@@ -107,8 +112,6 @@ public class PartAddController implements Initializable {
             addPartCompanyMachineTextField.setText(((InHouse) selectedPart).getMachineId().toString());
         else if(selectedPart instanceof Outsourced)
             addPartCompanyMachineTextField.setText(((Outsourced) selectedPart).getCompanyName());
-
-        PartModifyService.modifyPartID = -1;
     }
 
 
@@ -193,7 +196,7 @@ public class PartAddController implements Initializable {
     }
 
     private Integer generateID(){
-        return Inventory.getAllParts().size() + 1;
+        return Validator.uniqueID();
     }
     private Boolean isInHouseSelected(){
         return addPartInHouseRadio.selectedProperty().get();
@@ -257,4 +260,5 @@ public class PartAddController implements Initializable {
     private void setValidMachine() {
         this.validMachine = Validator.defaultValue( Validator.parseInt(this.addPartCompanyMachineTextField.getText() ) );
     }
+
 }

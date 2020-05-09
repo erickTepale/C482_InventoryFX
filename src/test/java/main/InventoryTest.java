@@ -101,6 +101,18 @@ public class InventoryTest {
     }
 
     @Test
+    public void UpdatePart2(){
+        Inventory.addPart(new Outsourced(1,"bleh", 3.44, 3,2,3, "newCompany"));
+        Inventory.addPart(new InHouse(2, "oh", 400.0, 2, 1, 3, 223432));
+        Inventory.addPart(new Outsourced(3,"bleh", 3.44, 3,2,3, "bjfh"));
+
+        Part update = new InHouse(2, "blurb", 500.0, 2, 1, 3, 564345);
+
+        Inventory.updatePart(update);
+        Assert.assertEquals("blurb", Inventory.getAllParts().get(1).getName());
+    }
+
+    @Test
     public void DeletePart1(){
         Inventory.addPart(new Outsourced(1,"bleh", 3.44, 3,2,3, "newCompany"));
         Inventory.addPart(new InHouse(2, "oh", 400.0, 2, 1, 3, 223432));

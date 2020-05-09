@@ -1,6 +1,10 @@
 package utilities;
 
+import main.Inventory;
+import part.Part;
+
 import java.text.ParseException;
+import java.util.Comparator;
 
 /**
  * Designed to validate user input
@@ -12,6 +16,10 @@ public class Validator {
 
     public static String defaultValue(String input){
         return input.equals("") ? "n/a" : input;
+    }
+
+    public static Integer uniqueID (){
+            return Inventory.getAllParts().stream().max(Comparator.comparing(Part::getId)).get().getId() + 1;
     }
 
     public static Integer defaultValue(Integer input){

@@ -24,6 +24,10 @@ public class PartService {
         return Inventory.getAllParts();
     }
 
+    public static void update(Part part){
+        Inventory.updatePart(part);
+    }
+
     /*
     * 1. Searches int/string query possibilities
     * 2. Joins int results into string results
