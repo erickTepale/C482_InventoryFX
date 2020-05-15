@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import main.Inventory;
-import org.w3c.dom.ls.LSOutput;
 import part.InHouse;
 import part.Outsourced;
 import part.Part;
@@ -16,7 +15,6 @@ import utilities.Validator;
 import utilities.WindowUtility;
 
 import java.net.URL;
-import java.util.InputMismatchException;
 import java.util.ResourceBundle;
 
 public class PartAddController implements Initializable {

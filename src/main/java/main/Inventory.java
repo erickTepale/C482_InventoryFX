@@ -44,14 +44,19 @@ public class Inventory {
     }
 
     public static void updatePart(Integer index, Part selectedPart){
-        allParts.set(index, selectedPart);
+        Part toRemove = allParts.get(index);
+        allParts.remove(toRemove);
+        allParts.add(selectedPart);
     }
 
     public static void updatePart(Part selectedPart){
-        allParts = FXCollections.observableList( allParts
-                .stream()
-                .map(obj -> obj.getId().equals(selectedPart.getId()) ? selectedPart : obj)
-                .collect(Collectors.toCollection(ArrayList<Part>::new)));
+        Part toRemove = lookupPart(selectedPart.getId()).get();
+        allParts.remove(toRemove);
+        allParts.add(selectedPart);
+//        allParts = FXCollections.observableList( allParts
+//                .stream()
+//                .map(obj -> obj.getId().equals(selectedPart.getId()) ? selectedPart : obj)
+//                .collect(Collectors.toCollection(ArrayList<Part>::new)));
     }
 
     public static void updateProduct(Integer index, Product selectedProduct){

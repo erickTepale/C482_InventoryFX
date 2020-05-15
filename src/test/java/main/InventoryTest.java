@@ -97,7 +97,7 @@ public class InventoryTest {
 
         Inventory.updatePart(1, update);
 
-        Assert.assertEquals("blurb", Inventory.getAllParts().get(1).getName());
+        Assert.assertEquals("blurb", Inventory.lookupPart(update.getId()).get().getName());
     }
 
     @Test
@@ -109,7 +109,7 @@ public class InventoryTest {
         Part update = new InHouse(2, "blurb", 500.0, 2, 1, 3, 564345);
 
         Inventory.updatePart(update);
-        Assert.assertEquals("blurb", Inventory.getAllParts().get(1).getName());
+        Assert.assertEquals("blurb", Inventory.lookupPart(update.getId()).get().getName());
     }
 
     @Test

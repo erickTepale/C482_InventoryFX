@@ -43,6 +43,7 @@ public class PartController implements Initializable {
     public void onMouseClickedModifyButton(){
         PartModifyService.modifyPartID = this.partTableView.getSelectionModel().getSelectedItem().getId();
         WindowUtility.openWindowFXMLFile( new FXMLLoader(getClass().getResource("/part_add/part_add.fxml")) );
+        partTableView.refresh();
     }
 
     public void onMouseClickedDeleteButton(){
