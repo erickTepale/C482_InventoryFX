@@ -41,8 +41,20 @@ public class ProductService {
         }
     }
 
+    public static void update(Product product){
+        Inventory.updateProduct(product);
+    }
+
     public static ObservableList<Product> deleteProduct(Product toDelete){
         Inventory.lookupProduct(toDelete.getId()).ifPresent(Inventory::deleteProduct);
         return Inventory.getAllProducts();
+    }
+
+    public static Boolean add(Product product){
+        if(product != null) {
+            Inventory.addProduct(product);
+            return true;
+        }
+        return false;
     }
 }

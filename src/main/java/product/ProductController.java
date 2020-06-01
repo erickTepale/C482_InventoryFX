@@ -11,6 +11,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import main.Inventory;
 import part.Part;
 import part.PartService;
+import part_modify.PartModifyService;
+import product_modify.ProductModifyService;
 import utilities.WindowUtility;
 
 import java.net.URL;
@@ -37,7 +39,8 @@ public class ProductController implements Initializable {
     }
 
     public void onMouseClickedModifyButton(){
-        WindowUtility.openWindowFXMLFile( new FXMLLoader(getClass().getResource("/product_modify/product_modify.fxml")) );
+        ProductModifyService.modifyProductId = this.productTableView.getSelectionModel().getSelectedItem().getId();
+        WindowUtility.openWindowFXMLFile( new FXMLLoader(getClass().getResource("/product_add/product_add.fxml")) );
     }
 
     public void onMouseClickedDeleteButton(){

@@ -63,6 +63,12 @@ public class Inventory {
         allProducts.set(index, selectedProduct);
     }
 
+    public static void updateProduct(Product selectedProduct){
+        Product toRemove = lookupProduct(selectedProduct.getId()).get();
+        allProducts.remove(toRemove);
+        allProducts.add(selectedProduct);
+    }
+
     public static boolean deletePart(Part part){
         return allParts.remove(part);
     }

@@ -21,7 +21,10 @@ public class Validator {
 
     public static Integer uniqueID (){
         return Inventory.getAllParts().size() == 0 ? 1 : Inventory.getAllParts().stream().max(Comparator.comparing(Part::getId)).get().getId() + 1;
+    }
 
+    public static Integer uniqueIDProduct (){
+        return Inventory.getAllProducts().size() == 0 ? 1 : Inventory.getAllProducts().stream().max(Comparator.comparing(Product::getId)).get().getId() + 1;
     }
 
     public static Integer uniqueIdProduct(){
