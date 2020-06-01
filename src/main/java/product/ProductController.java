@@ -35,6 +35,7 @@ public class ProductController implements Initializable {
     }
 
     public void onMouseClickedAddButton(){
+        ProductModifyService.modifyProductId = -1;
         WindowUtility.openWindowFXMLFile( new FXMLLoader(getClass().getResource("/product_add/product_add.fxml")) );
     }
 

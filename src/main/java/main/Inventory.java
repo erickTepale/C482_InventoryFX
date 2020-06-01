@@ -92,6 +92,17 @@ public class Inventory {
         productPartMap.get(product).add(part);
     }
 
+    public static void addAssociation(Product product, ObservableList<Part> list){
+        if(!productPartMap.containsKey(product)) {
+            productPartMap.put(product, FXCollections.observableArrayList());
+            productPartMap.get(product).addAll(list);
+        }
+        else
+            productPartMap.replace(product, list);
+
+
+    }
+
     public static void removeAssociation(Product product, Part part){
         productPartMap.get(product).remove(part);
     }

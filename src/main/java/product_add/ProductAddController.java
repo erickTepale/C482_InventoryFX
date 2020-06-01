@@ -103,12 +103,17 @@ public class ProductAddController implements Initializable {
 
     // TODO: Must add association to parts when creating a new product.
     private void save(){
-        if( ProductService.add( generateProduct() ) )
+        Product product = generateProduct();
+
+        if(ProductService.add(product)) {
+            Inventory.addAssociation(product, associationParts);
             WindowUtility.closeWindow(addProductCancelButton);
+        }
     }
 
     private void update(){
         ProductService.update(generateProduct( ProductModifyService.modifyProductId ));
+        Inventory.addAssociation(Inventory.lookupProduct(ProductModifyService.modifyProductId).get(), associationParts);
         resetModifyPartID();
 
         WindowUtility.closeWindow(addProductCancelButton);
