@@ -6,14 +6,14 @@ import part.Part;
 import product.Product;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Inventory {
-    //TODO: MAKE A STATIC SIZE that will keep track of all values ever inserted into parts/objects for IDS,
-    // there is a bug that if there are 5 items and u delete 4. then next add will have ID = 5 . will have same ID
     protected static ObservableList<Part> allParts = FXCollections.observableArrayList();
     protected static ObservableList<Product> allProducts = FXCollections.observableArrayList();
+    protected static HashMap<Product, ObservableList<Part>> productPartMap = new HashMap<>();
 
     public static void addPart(Part newPart){
         allParts.add(newPart);
@@ -83,5 +83,20 @@ public class Inventory {
 
     public static ObservableList<Product> getAllProducts(){
         return allProducts;
+    }
+
+    public static void addAssociation(Product product, Part part){
+        if(!productPartMap.containsKey(product))
+            productPartMap.put(product, FXCollections.observableArrayList());
+
+        productPartMap.get(product).add(part);
+    }
+
+    public static void removeAssociation(Product product, Part part){
+        productPartMap.get(product).remove(part);
+    }
+
+    public static ObservableList<Part> getAssociation(Product product){
+        return productPartMap.get(product);
     }
 }

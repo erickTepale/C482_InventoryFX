@@ -1,9 +1,12 @@
 package product_add;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import main.Inventory;
 import part.Part;
 import part.PartService;
@@ -32,6 +35,15 @@ public class ProductAddController implements Initializable {
     public TextField addProductMinTextField;
     public TableView<Part> partTableAllParts;
     public TableView<Part> partTableRelatedParts;
+    public TableColumn<String, Integer> idAllColumn;
+    public TableColumn<String, String> nameAllColumn;
+    public TableColumn<String, Integer> invAllColumn;
+    public TableColumn<String, Double> priceAllColumn;
+    public TableColumn<String, Integer> idRelatedColumn;
+    public TableColumn<String, String> nameRelatedColumn;
+    public TableColumn<String, Integer> invRelatedColumn;
+    public TableColumn<String, Double> priceRelatedColumn;
+
 
     private Integer validInv;
     private Double validCost;
@@ -53,7 +65,9 @@ public class ProductAddController implements Initializable {
         WindowUtility.closeWindow(addProductCancelButton);
     }
 
-    public void onMouseClickSearchButton(){}
+    public void onMouseClickSearchButton(){
+        initialize( PartService.search( this.addProductSearchTextField.getText() ) );
+    }
 
     public void onMouseClickAddButton(){}
 
@@ -65,8 +79,17 @@ public class ProductAddController implements Initializable {
         if(!ProductModifyService.modifyProductId.equals(-1)){
             insertSelectedData();
         }
+
+        setAllPartsTable();
+        setRelatedPartsTable();
+
     }
 
+    public void initialize(ObservableList<Part> list){
+        this.partTableAllParts.setItems(list);
+    }
+
+    // TODO: Must add association to parts when creating a new product.
     private void save(){
         if( ProductService.add( generateProduct() ) )
             WindowUtility.closeWindow(addProductCancelButton);
@@ -152,5 +175,23 @@ public class ProductAddController implements Initializable {
 
     private void resetModifyPartID() {
         ProductModifyService.modifyProductId = -1;
+    }
+
+    private void setAllPartsTable(){
+        this.idAllColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        this.nameAllColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        this.invAllColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        this.priceAllColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        this.partTableAllParts.setItems(Inventory.getAllParts());
+    }
+
+    private void setRelatedPartsTable(){
+        this.idRelatedColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        this.nameRelatedColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        this.invRelatedColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        this.priceRelatedColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        if(ProductModifyService.modifyProductId != -1)
+            this.partTableRelatedParts.setItems(Inventory.getAssociation( Inventory.lookupProduct( ProductModifyService.modifyProductId ).get() ) );
     }
 }

@@ -158,10 +158,10 @@
                <children>
                   <TableView fx:id="partTableAllParts" layoutX="39.0" layoutY="-4.0" prefHeight="200.0" prefWidth="453.0">
                     <columns>
-                      <TableColumn text="Part ID" />
-                      <TableColumn prefWidth="167.0" text="Part Name" />
-                      <TableColumn prefWidth="94.0" text="Inventory Level" />
-                      <TableColumn prefWidth="111.0" text="Price per Unit" />
+                      <TableColumn fx:id="idAllColumn" text="Part ID" />
+                      <TableColumn fx:id="nameAllColumn" prefWidth="167.0" text="Part Name" />
+                      <TableColumn fx:id="invAllColumn" prefWidth="94.0" text="Inventory Level" />
+                      <TableColumn fx:id="priceAllColumn" prefWidth="111.0" text="Price per Unit" />
                     </columns>
                   </TableView>
                </children></Pane>
@@ -178,10 +178,10 @@
                <children>
                   <TableView fx:id="partTableRelatedParts" layoutX="40.0" layoutY="-6.0" prefHeight="200.0" prefWidth="453.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Part ID" />
-                      <TableColumn prefWidth="173.0" text="Part Name" />
-                       <TableColumn prefWidth="97.0" text="Inventory Level" />
-                       <TableColumn prefWidth="107.0" text="Price per Unit" />
+                      <TableColumn fx:id="idRelatedColumn"  prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="nameRelatedColumn" prefWidth="173.0" text="Part Name" />
+                       <TableColumn fx:id="invRelatedColumn" prefWidth="97.0" text="Inventory Level" />
+                       <TableColumn fx:id="priceRelatedColumn" prefWidth="107.0" text="Price per Unit" />
                     </columns>
                   </TableView>
                </children></Pane>
