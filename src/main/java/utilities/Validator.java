@@ -2,6 +2,7 @@ package utilities;
 
 import main.Inventory;
 import part.Part;
+import product.Product;
 
 import java.text.ParseException;
 import java.util.Comparator;
@@ -19,7 +20,12 @@ public class Validator {
     }
 
     public static Integer uniqueID (){
-            return Inventory.getAllParts().stream().max(Comparator.comparing(Part::getId)).get().getId() + 1;
+        return Inventory.getAllParts().size() == 0 ? 1 : Inventory.getAllParts().stream().max(Comparator.comparing(Part::getId)).get().getId() + 1;
+
+    }
+
+    public static Integer uniqueIdProduct(){
+        return Inventory.getAllProducts().size() == 0 ? 1 : Inventory.getAllProducts().stream().max(Comparator.comparing(Product::getId)).get().getId() + 1;
     }
 
     public static Integer defaultValue(Integer input){

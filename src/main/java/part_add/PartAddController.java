@@ -40,9 +40,11 @@ public class PartAddController implements Initializable {
 
     public void onMouseClickedSaveButton(){
         System.out.println(Inventory.getAllParts());
-        if(PartModifyService.modifyPartID.equals(-1))
+        if(PartModifyService.modifyPartID.equals(-1)) {
+            System.out.println("Creating New Part: modifyPartID = " + PartModifyService.modifyPartID);
             save();
-        else {
+        }else {
+            System.out.println("Updating Part: modifyPartID = " + PartModifyService.modifyPartID);
             update();
         }
     }

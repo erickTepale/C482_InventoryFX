@@ -1,5 +1,6 @@
 package product;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -8,6 +9,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.Inventory;
+import part.Part;
+import part.PartService;
 import utilities.WindowUtility;
 
 import java.net.URL;
@@ -26,7 +29,7 @@ public class ProductController implements Initializable {
     public TableColumn<String, Double> priceColumn;
 
     public void onMouseClickedSearchButton(){
-
+        initialize( ProductService.search(productSearchTextField.getText() ));
     }
 
     public void onMouseClickedAddButton(){
@@ -38,8 +41,10 @@ public class ProductController implements Initializable {
     }
 
     public void onMouseClickedDeleteButton(){
-
+        initialize(ProductService.deleteProduct( productTableView.getSelectionModel().getSelectedItem() ));
     }
+
+    public void initialize(ObservableList<Product> list) { this.productTableView.setItems(list);}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
