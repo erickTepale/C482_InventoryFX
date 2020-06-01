@@ -1,5 +1,6 @@
 package product_add;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -49,7 +50,9 @@ public class ProductAddController implements Initializable {
     private Double validCost;
     private Integer validMax;
     private Integer validMin;
+    private ObservableList<Part> associationParts = FXCollections.observableArrayList();
 
+    //todo: handle assoc parts list according to each option
     public void onMouseClickedSaveButton(){
         System.out.println(Inventory.getAllProducts());
         if(ProductModifyService.modifyProductId.equals(-1)) {
@@ -69,9 +72,15 @@ public class ProductAddController implements Initializable {
         initialize( PartService.search( this.addProductSearchTextField.getText() ) );
     }
 
-    public void onMouseClickAddButton(){}
+    public void onMouseClickAddButton(){
+        associationParts.add( Inventory.lookupPart(partTableAllParts.getSelectionModel().getSelectedItem().getId()).get() );
+        initializeRelated(associationParts);
+    }
 
-    public void onMouseClickDeleteButton(){}
+    public void onMouseClickDeleteButton(){
+        associationParts.remove(Inventory.lookupPart(partTableRelatedParts.getSelectionModel().getSelectedItem().getId()).get());
+        initializeRelated(associationParts);
+    }
 
 
     @Override
@@ -87,6 +96,9 @@ public class ProductAddController implements Initializable {
 
     public void initialize(ObservableList<Part> list){
         this.partTableAllParts.setItems(list);
+    }
+    public void initializeRelated(ObservableList<Part> list){
+        this.partTableRelatedParts.setItems(list);
     }
 
     // TODO: Must add association to parts when creating a new product.
@@ -191,7 +203,9 @@ public class ProductAddController implements Initializable {
         this.invRelatedColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
         this.priceRelatedColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        if(ProductModifyService.modifyProductId != -1)
+        if(ProductModifyService.modifyProductId != -1){
             this.partTableRelatedParts.setItems(Inventory.getAssociation( Inventory.lookupProduct( ProductModifyService.modifyProductId ).get() ) );
+            associationParts = Inventory.getAssociation( Inventory.lookupProduct( ProductModifyService.modifyProductId ).get() );
+        }
     }
 }
