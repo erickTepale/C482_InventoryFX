@@ -18,6 +18,7 @@ import utilities.Validator;
 import utilities.WindowUtility;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ProductAddController implements Initializable {
@@ -49,7 +50,10 @@ public class ProductAddController implements Initializable {
     private Double validCost;
     private Integer validMax;
     private Integer validMin;
+
     private ObservableList<Part> associationParts = FXCollections.observableArrayList();
+    private ArrayList<Part> originalAssociationParts = new ArrayList<>();
+
 
     //todo: handle assoc parts list according to each option
     public void onMouseClickedSaveButton(){
@@ -64,7 +68,21 @@ public class ProductAddController implements Initializable {
     }
 
     public void onMouseClickedCancelButton(){
+        //reset association
+        associationParts = null;
+        associationParts = FXCollections.observableArrayList();
+        associationParts.addAll(originalAssociationParts);
+        initializeRelated(associationParts);
+        originalAssociationParts = new ArrayList<>();
+        partTableRelatedParts.refresh();
+
+        if(!ProductModifyService.modifyProductId.equals(-1)){
+            Inventory.addAssociation(Inventory.lookupProduct(ProductModifyService.modifyProductId).get(), associationParts);
+        }
+
+
         WindowUtility.closeWindow(addProductCancelButton);
+
     }
 
     public void onMouseClickSearchButton(){
@@ -84,13 +102,14 @@ public class ProductAddController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         if(!ProductModifyService.modifyProductId.equals(-1)){
             insertSelectedData();
         }
 
         setAllPartsTable();
         setRelatedPartsTable();
-
+        System.out.println("testtted " + associationParts );
     }
 
     public void initialize(ObservableList<Part> list){
@@ -100,22 +119,36 @@ public class ProductAddController implements Initializable {
         this.partTableRelatedParts.setItems(list);
     }
 
-    // TODO: Must add association to parts when creating a new product.
+
     private void save(){
         Product product = generateProduct();
 
-        if(ProductService.add(product)) {
-            Inventory.addAssociation(product, associationParts);
-            WindowUtility.closeWindow(addProductCancelButton);
+        if(isProductPriceValid()) {
+            if (ProductService.add(product)) {
+                Inventory.addAssociation(product, associationParts);
+                WindowUtility.closeWindow(addProductCancelButton);
+            }
+        }else{
+            WindowUtility.warningMessage("The cost of the product: " + validCost + " is less than the sum of its parts: " + sumOfParts());
         }
     }
 
     private void update(){
-        ProductService.update(generateProduct(ProductModifyService .modifyProductId ));
-        Inventory.addAssociation(Inventory.lookupProduct(ProductModifyService.modifyProductId).get(), associationParts);
-        resetModifyProductID();
+        //Generate Product
+        Product generated = generateProduct(ProductModifyService.modifyProductId);
 
-        WindowUtility.closeWindow(addProductCancelButton);
+
+        if(isProductPriceValid()) {
+
+            ProductService.update(generated);
+            Inventory.addAssociation(Inventory.lookupProduct(ProductModifyService.modifyProductId).get(), associationParts);
+            resetModifyProductID();
+
+            WindowUtility.closeWindow(addProductCancelButton);
+        }else {
+            WindowUtility.warningMessage("The cost of the product: " + validCost + " is less than the sum of its parts: " + sumOfParts());
+        }
+
     }
 
     private void insertSelectedData(){
@@ -174,6 +207,16 @@ public class ProductAddController implements Initializable {
         return  setValidInv();
     }
 
+    //requirement Part 2
+    private Boolean isProductPriceValid(){
+        return validCost >= sumOfParts();
+    }
+
+    private Double sumOfParts(){
+        return associationParts.stream().mapToDouble(Part::getPrice).sum();
+    }
+
+    //REQUIREMENT PART 1
     private Boolean setValidInv() {
         this.validInv = Validator.parseInt(this.addProductInvTextField.getText());
         return Validator.validateMinMaxInput(this.validMin, this.validMax) && Validator.validateInv(this.validMin, this.validMax, this.validInv);
@@ -212,6 +255,7 @@ public class ProductAddController implements Initializable {
         if(ProductModifyService.modifyProductId != -1){
             this.partTableRelatedParts.setItems(Inventory.getAssociation( Inventory.lookupProduct( ProductModifyService.modifyProductId ).get() ) );
             associationParts = Inventory.getAssociation( Inventory.lookupProduct( ProductModifyService.modifyProductId ).get() );
+            originalAssociationParts.addAll( associationParts);
         }
     }
 }
