@@ -11,7 +11,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import main.Inventory;
 import part.Part;
 import part.PartService;
-import part_modify.PartModifyService;
 import product.Product;
 import product.ProductService;
 import product_modify.ProductModifyService;
@@ -56,11 +55,11 @@ public class ProductAddController implements Initializable {
     public void onMouseClickedSaveButton(){
         System.out.println(Inventory.getAllProducts());
         if(ProductModifyService.modifyProductId.equals(-1)) {
-            System.out.println("Creating New Product: modifyProductID = " + ProductModifyService.modifyProductId);
             save();
+            System.out.println("Created New Product: modifyProductID = " + ProductModifyService.modifyProductId);
         }else {
-            System.out.println("Updating Product: modifyProductID = " + ProductModifyService.modifyProductId);
             update();
+            System.out.println("Updated Product: modifyProductID = " + ProductModifyService.modifyProductId);
         }
     }
 
@@ -112,9 +111,9 @@ public class ProductAddController implements Initializable {
     }
 
     private void update(){
-        ProductService.update(generateProduct( ProductModifyService.modifyProductId ));
+        ProductService.update(generateProduct(ProductModifyService .modifyProductId ));
         Inventory.addAssociation(Inventory.lookupProduct(ProductModifyService.modifyProductId).get(), associationParts);
-        resetModifyPartID();
+        resetModifyProductID();
 
         WindowUtility.closeWindow(addProductCancelButton);
     }
@@ -149,8 +148,10 @@ public class ProductAddController implements Initializable {
     }
 
     private Product generateProduct(Integer id){
+        System.out.println("Generating Product from modify selection. Part id: " + id);
         try {
             if (!isValidInput()) {
+                System.out.println("Exception thrown Invalid Input");
                 throw new Exception();
             }
 
@@ -190,7 +191,7 @@ public class ProductAddController implements Initializable {
         this.validMax = Validator.defaultValue( Validator.parseInt(this.addProductMaxTextField.getText() ) );
     }
 
-    private void resetModifyPartID() {
+    private void resetModifyProductID() {
         ProductModifyService.modifyProductId = -1;
     }
 

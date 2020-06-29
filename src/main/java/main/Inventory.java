@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class Inventory {
     protected static ObservableList<Part> allParts = FXCollections.observableArrayList();
     protected static ObservableList<Product> allProducts = FXCollections.observableArrayList();
-    protected static HashMap<Product, ObservableList<Part>> productPartMap = new HashMap<>();
+    protected static HashMap<Integer, ObservableList<Part>> productPartMap = new HashMap<>();
 
     public static void addPart(Part newPart){
         allParts.add(newPart);
@@ -86,28 +86,40 @@ public class Inventory {
     }
 
     public static void addAssociation(Product product, Part part){
-        if(!productPartMap.containsKey(product))
-            productPartMap.put(product, FXCollections.observableArrayList());
+        System.out.println("Adding one part to association. Product id: " + product.getId());
 
-        productPartMap.get(product).add(part);
+        if(!productPartMap.containsKey(product.getId())) {
+            System.out.println("Allocating memory for initial association");
+            productPartMap.put(product.getId(), FXCollections.observableArrayList());
+        }
+
+        productPartMap.get(product.getId()).add(part);
     }
 
     public static void addAssociation(Product product, ObservableList<Part> list){
-        if(!productPartMap.containsKey(product)) {
-            productPartMap.put(product, FXCollections.observableArrayList());
-            productPartMap.get(product).addAll(list);
+        if(!productPartMap.containsKey(product.getId()) ) {
+            System.out.println("Does not exist in map");
+            if (list != null) {
+                System.out.println("List is not null");
+                productPartMap.put(product.getId(), FXCollections.observableArrayList());
+                productPartMap.get(product.getId()).addAll(list);
+            }else
+                System.out.println("List is null");
+            System.out.println(productPartMap.toString());
         }
-        else
-            productPartMap.replace(product, list);
+        else {
+            System.out.println("Exists in map");
+            productPartMap.replace(product.getId(), list);
+        }
 
 
     }
 
     public static void removeAssociation(Product product, Part part){
-        productPartMap.get(product).remove(part);
+        productPartMap.get(product.getId()).remove(part);
     }
 
     public static ObservableList<Part> getAssociation(Product product){
-        return productPartMap.get(product);
+        return productPartMap.get(product.getId());
     }
 }
