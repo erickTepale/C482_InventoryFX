@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="C482_InventoryFX" target="8" />
+      <module name="C482_InventoryFX" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
