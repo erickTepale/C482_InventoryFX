@@ -123,14 +123,19 @@ public class ProductAddController implements Initializable {
     private void save(){
         Product product = generateProduct();
 
-        if(isProductPriceValid()) {
-            if (ProductService.add(product)) {
-                Inventory.addAssociation(product, associationParts);
-                WindowUtility.closeWindow(addProductCancelButton);
+        if(!product.getName().isEmpty()) {
+            if (isProductPriceValid()) {
+                if (ProductService.add(product)) {
+                    Inventory.addAssociation(product, associationParts);
+                    WindowUtility.closeWindow(addProductCancelButton);
+                }
+            } else {
+                WindowUtility.warningMessage("The cost of the product: " + validCost + " is less than the sum of its parts: " + sumOfParts());
             }
         }else{
-            WindowUtility.warningMessage("The cost of the product: " + validCost + " is less than the sum of its parts: " + sumOfParts());
+            WindowUtility.warningMessage("Name must contain values");
         }
+
     }
 
     private void update(){
@@ -183,10 +188,12 @@ public class ProductAddController implements Initializable {
     private Product generateProduct(Integer id){
         System.out.println("Generating Product from modify selection. Part id: " + id);
         try {
+            //Price related validation
             if (!isValidInput()) {
                 System.out.println("Exception thrown Invalid Input");
                 throw new Exception();
             }
+
 
             return new Product(id,
                     addProductNameTextField.getText(),
@@ -200,6 +207,7 @@ public class ProductAddController implements Initializable {
         return null;
     }
 
+    //price related validation
     private Boolean isValidInput(){
         setValidMin();
         setValidPrice();
