@@ -19,6 +19,7 @@ import utilities.WindowUtility;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 
 public class ProductAddController implements Initializable {
@@ -125,9 +126,11 @@ public class ProductAddController implements Initializable {
 
         if(!product.getName().isEmpty()) {
             if (isProductPriceValid()) {
-                if (ProductService.add(product)) {
-                    Inventory.addAssociation(product, associationParts);
-                    WindowUtility.closeWindow(addProductCancelButton);
+                if(hasValidAssociatedParts()) {
+                    if (ProductService.add(product)) {
+                        Inventory.addAssociation(product, associationParts);
+                        WindowUtility.closeWindow(addProductCancelButton);
+                    }
                 }
             } else {
                 WindowUtility.warningMessage("The cost of the product: " + validCost + " is less than the sum of its parts: " + sumOfParts());
@@ -136,6 +139,19 @@ public class ProductAddController implements Initializable {
             WindowUtility.warningMessage("Name must contain values");
         }
 
+    }
+
+    private boolean hasValidAssociatedParts() {
+        if(associationParts.size() > 0){
+            if( associationParts.size() == new HashSet<>(associationParts).size() ){
+                return true;
+            }else {
+                WindowUtility.warningMessage("All Associated parts must be unique");
+            }
+        }else{
+            WindowUtility.warningMessage("Must have at least One Associated Part for the product.");
+        }
+        return false;
     }
 
     private void update(){
