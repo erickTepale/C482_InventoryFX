@@ -18,8 +18,8 @@ public class ProductService {
         if (query.trim().isEmpty()) return Inventory.getAllProducts();
 
         ObservableList<Product> tempString = searchStringValue(query);
-        ObservableList<Product> tempInteger = searchIntValue(query);
-        tempString.addAll(tempInteger);
+        //ObservableList<Product> tempInteger = searchIntValue(query);
+        //tempString.addAll(tempInteger);
         return tempString;
     }
 

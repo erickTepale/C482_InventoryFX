@@ -39,8 +39,8 @@ public class PartService {
         if (query.trim().isEmpty()) return Inventory.getAllParts();
 
         ObservableList<Part> tempString = searchStringValue(query);
-        ObservableList<Part> tempInteger = searchIntValue(query);
-        tempString.addAll(tempInteger);
+        //ObservableList<Part> tempInteger = searchIntValue(query);
+        //tempString.addAll(tempInteger);
         return tempString;
     }
 

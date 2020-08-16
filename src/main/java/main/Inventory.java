@@ -28,18 +28,20 @@ public class Inventory {
     }
 
     public static ObservableList<Part> lookupPart(String name){
+        String regex = "^(.*?)" + name + "(.*?)";
         return FXCollections.observableList( allParts.stream()
-                                                .filter(obj -> obj.getName().toLowerCase().equals(name.toLowerCase()))
+                                                .filter(obj -> obj.getName().matches(regex) || obj.getName().toLowerCase().matches(regex)  )
                                                 .collect(Collectors.toCollection(ArrayList<Part>::new)) );
-    }
+    }// equals(name.toLowerCase()
 
     public static Optional<Product> lookupProduct(Integer productId){
         return allProducts.stream().filter(obj -> obj.getId().equals(productId)) .findFirst();
     }
 
     public static ObservableList<Product> lookupProduct(String name){
+        String regex = "^(.*?)" + name + "(.*?)";
         return FXCollections.observableList( allProducts.stream()
-                                                .filter(obj -> obj.getName().toLowerCase().equals(name.toLowerCase()))
+                                                .filter(obj -> obj.getName().matches(regex) || obj.getName().toLowerCase().matches(regex))
                                                 .collect(Collectors.toCollection(ArrayList<Product>::new)));
     }
 
