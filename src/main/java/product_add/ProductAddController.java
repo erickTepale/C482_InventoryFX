@@ -159,15 +159,20 @@ public class ProductAddController implements Initializable {
         Product generated = generateProduct(ProductModifyService.modifyProductId);
 
 
-        if(isProductPriceValid()) {
+        if(!generated.getName().isEmpty()) {
+            if(isProductPriceValid()) {
+                if(hasValidAssociatedParts()) {
+                    ProductService.update(generated);
+                    Inventory.addAssociation(Inventory.lookupProduct(ProductModifyService.modifyProductId).get(), associationParts);
+                    resetModifyProductID();
 
-            ProductService.update(generated);
-            Inventory.addAssociation(Inventory.lookupProduct(ProductModifyService.modifyProductId).get(), associationParts);
-            resetModifyProductID();
-
-            WindowUtility.closeWindow(addProductCancelButton);
-        }else {
-            WindowUtility.warningMessage("The cost of the product: " + validCost + " is less than the sum of its parts: " + sumOfParts());
+                    WindowUtility.closeWindow(addProductCancelButton);
+                }
+            }else {
+                WindowUtility.warningMessage("The cost of the product: " + validCost + " is less than the sum of its parts: " + sumOfParts());
+            }
+        }else{
+            WindowUtility.warningMessage("Name must contain values");
         }
 
     }
